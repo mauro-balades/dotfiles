@@ -1,0 +1,139 @@
+{
+  "context-menu": {
+    "atomic-terminal": [
+      {
+        "label": "Open New Terminal",
+        "command": "atomic-terminal:open"
+      },
+      {
+        "label": "Close",
+        "command": "atomic-terminal:close"
+      },
+      {
+        "label": "Restart",
+        "command": "atomic-terminal:restart"
+      },
+      {
+        "label": "Clear",
+        "command": "atomic-terminal:clear"
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "label": "Copy",
+        "command": "atomic-terminal:copy"
+      },
+      {
+        "label": "Paste",
+        "command": "atomic-terminal:paste"
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "label": "Close All Terminals",
+        "command": "atomic-terminal:close-all"
+      }
+    ],
+    "atom-text-editor, .tree-view, .tab-bar": [
+      {
+        "label": "Terminal",
+        "submenu": [
+          {
+            "label": "Open New Terminal",
+            "command": "atomic-terminal:open-context-menu"
+          },
+          {
+            "label": "Open New Terminal (Split Up)",
+            "command": "atomic-terminal:open-up-context-menu"
+          },
+          {
+            "label": "Open New Terminal (Split Down)",
+            "command": "atomic-terminal:open-down-context-menu"
+          },
+          {
+            "label": "Open New Terminal (Split Left)",
+            "command": "atomic-terminal:open-left-context-menu"
+          },
+          {
+            "label": "Open New Terminal (Split Right)",
+            "command": "atomic-terminal:open-right-context-menu"
+          },
+          {
+            "label": "Open New Terminal (Bottom Dock)",
+            "command": "atomic-terminal:open-bottom-dock-context-menu"
+          },
+          {
+            "label": "Open New Terminal (Left Dock)",
+            "command": "atomic-terminal:open-left-dock-context-menu"
+          },
+          {
+            "label": "Open New Terminal (Right Dock)",
+            "command": "atomic-terminal:open-right-dock-context-menu"
+          },
+          {
+            "label": "Close All Terminals",
+            "command": "atomic-terminal:close-all"
+          },
+          {
+            "label": "Focus Last Terminal",
+            "command": "atomic-terminal:focus"
+          }
+        ]
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Terminal",
+          "submenu": [
+            {
+              "label": "Open New Terminal",
+              "command": "atomic-terminal:open"
+            },
+            {
+              "label": "Open New Terminal (Split Up)",
+              "command": "atomic-terminal:open-up"
+            },
+            {
+              "label": "Open New Terminal (Split Down)",
+              "command": "atomic-terminal:open-down"
+            },
+            {
+              "label": "Open New Terminal (Split Left)",
+              "command": "atomic-terminal:open-left"
+            },
+            {
+              "label": "Open New Terminal (Split Right)",
+              "command": "atomic-terminal:open-right"
+            },
+            {
+              "label": "Open New Terminal (Bottom Dock)",
+              "command": "atomic-terminal:open-bottom-dock"
+            },
+            {
+              "label": "Open New Terminal (Left Dock)",
+              "command": "atomic-terminal:open-left-dock"
+            },
+            {
+              "label": "Open New Terminal (Right Dock)",
+              "command": "atomic-terminal:open-right-dock"
+            },
+            {
+              "label": "Close All Terminals",
+              "command": "atomic-terminal:close-all"
+            },
+            {
+              "label": "Focus Last Terminal",
+              "command": "atomic-terminal:focus"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

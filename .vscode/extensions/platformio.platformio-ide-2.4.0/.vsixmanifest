@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+		<Metadata>
+			<Identity Language="en-US" Id="platformio-ide" Version="2.4.0" Publisher="platformio" />
+			<DisplayName>PlatformIO IDE</DisplayName>
+			<Description xml:space="preserve">Professional development environment for Embedded, IoT, Arduino, CMSIS, ESP-IDF, FreeRTOS, libOpenCM3, mbed OS, Pulp OS, SPL, STM32Cube, Zephyr RTOS, ARM, AVR, Espressif (ESP8266/ESP32), FPGA, MCS-51 (8051), MSP430, Nordic (nRF51/nRF52), NXP i.MX RT, PIC32, RISC-V, STMicroelectronics (STM8/STM32), Teensy</Description>
+			<Tags>embedded,debug,c,c++,microcontroller,keybindings,debuggers,platformio-debug.disassembly,Disassembly,__ext_dbgasm,platformio-debug.memoryview,Memory,__ext_dbgmem,platformio-debug.asm,Assembly,asm,__ext_asm,__ext_nasm,__ext_yasm,__ext_inc,__ext_s</Tags>
+			<Categories>Programming Languages,Debuggers,Other</Categories>
+			<GalleryFlags>Public</GalleryFlags>
+			
+			<Properties>
+				<Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.57.0" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value="ms-vscode.cpptools" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionPack" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionKind" Value="workspace" />
+				<Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/platformio/platformio-vscode-ide.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/platformio/platformio-vscode-ide.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/platformio/platformio-vscode-ide.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Support" Value="https://github.com/platformio/platformio-vscode-ide/issues" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://platformio.org" />
+				
+				
+				<Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />
+				
+				
+			</Properties>
+			<License>extension/LICENSE.txt</License>
+			<Icon>extension/resources/platformio-logo.png</Icon>
+		</Metadata>
+		<Installation>
+			<InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+		</Installation>
+		<Dependencies/>
+		<Assets>
+			<Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+			<Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Content.Changelog" Path="extension/CHANGELOG.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Content.License" Path="extension/LICENSE.txt" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/resources/platformio-logo.png" Addressable="true" />
+		</Assets>
+	</PackageManifest>

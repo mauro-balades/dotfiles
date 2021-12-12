@@ -1,0 +1,33 @@
+{
+	"name": "autotrim",
+	"displayName": "AutoTrim",
+	"description": "Automatically trims trailing whitespace when moving the cursor from one line to another",
+	"version": "1.0.6",
+	"publisher": "NathanRidley",
+	"repository": "https://github.com/axefrog/vscode-autotrim",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/src/extension",
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "*",
+		"vscode": "^0.11.0"
+	},
+	"__metadata": {
+		"id": "d1ce9ebe-37e6-457f-b822-6e10ed0545d5",
+		"publisherId": "4e05a996-6e91-4213-a9ae-67caf9dd7c85",
+		"publisherDisplayName": "Nathan Ridley",
+		"installedTimestamp": 1628680329593
+	}
+}

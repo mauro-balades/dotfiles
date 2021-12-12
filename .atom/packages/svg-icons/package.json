@@ -1,0 +1,69 @@
+{
+  "_from": "https://www.atom.io/api/packages/svg-icons/versions/0.8.1/tarball",
+  "_id": "svg-icons@0.8.1",
+  "_inBundle": false,
+  "_integrity": "sha512-u2GvSshFPXv/MBFiOKrECtDs7FnDQoTF7B3E6glW3hDupg3Vyi3HdHuNu6SbH0ETLdMNADIYegsOZ15xzWsEnA==",
+  "_location": "/svg-icons",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/svg-icons/versions/0.8.1/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/svg-icons/versions/0.8.1/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/svg-icons/versions/0.8.1/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/svg-icons/versions/0.8.1/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/svg-icons/versions/0.8.1/tarball",
+  "_shasum": "b43ec9968aec8107d9bcd582ac530fc5211008ba",
+  "_spec": "https://www.atom.io/api/packages/svg-icons/versions/0.8.1/tarball",
+  "_where": "/tmp/apm-install-dir-2021828-10321-zcjiy4.y32xo",
+  "author": {
+    "name": "Jan T. Sott",
+    "url": "http://github.com/idleberg"
+  },
+  "bugs": {
+    "url": "https://github.com/idleberg/atom-svg-icons/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Snippets for popular SVG icons, including Octicons, Evil Icons, Open Iconic, SmartIcons Glyphs, and Bytesize",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-json": "^3.1.0",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.1.2"
+  },
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/idleberg/atom-svg-icons#readme",
+  "keywords": [
+    "svg icons",
+    "octicons",
+    "evil icons",
+    "glyphs"
+  ],
+  "license": "MIT",
+  "lint-staged": {
+    "*.json": "eslint --cache --fix"
+  },
+  "name": "svg-icons",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idleberg/atom-svg-icons.git"
+  },
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore --no-error-on-unmatched-pattern ./snippets/*.json",
+    "prepare": "husky install",
+    "test": "npm run lint"
+  },
+  "version": "0.8.1",
+  "volta": {
+    "node": "14.17.6",
+    "yarn": "1.22.11",
+    "npm": "6.14.15"
+  }
+}

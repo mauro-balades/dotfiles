@@ -1,0 +1,144 @@
+{
+  "_from": "https://www.atom.io/api/packages/atomic-terminal/versions/1.1.7/tarball",
+  "_id": "atomic-terminal@1.1.7",
+  "_inBundle": false,
+  "_integrity": "sha512-TnNbidHVoim98KlT1TI+Jdz6F4lOBTyqrFptvs3hFiO8IvXS9pBAVTlmdjOk2AoEc2ji/cqhlsvAWVWyAwR9sw==",
+  "_location": "/atomic-terminal",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/atomic-terminal/versions/1.1.7/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/atomic-terminal/versions/1.1.7/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/atomic-terminal/versions/1.1.7/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/atomic-terminal/versions/1.1.7/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/atomic-terminal/versions/1.1.7/tarball",
+  "_shasum": "ff9097658dda66f0af9459b00094d7c640dba96e",
+  "_spec": "https://www.atom.io/api/packages/atomic-terminal/versions/1.1.7/tarball",
+  "_where": "/tmp/apm-install-dir-2021829-42497-1c5x7pw.jjhbi",
+  "activationHooks": [
+    "core:loaded-shell-environment"
+  ],
+  "atomTestRunner": "./spec/custom-runner",
+  "bugs": {
+    "url": "https://github.com/atom-community/terminal/issues/new/choose"
+  },
+  "bundleDependencies": false,
+  "consumedServices": {
+    "tool-bar": {
+      "versions": {
+        "^0 || ^1": "consumeToolBar"
+      }
+    }
+  },
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "node-pty-prebuilt-multiarch": "^0.10.0",
+    "uuid": "^8.3.2",
+    "which": "^2.0.2",
+    "xterm": "4.13.0",
+    "xterm-addon-fit": "0.5.0",
+    "xterm-addon-ligatures": "^0.5.1",
+    "xterm-addon-web-links": "0.4.0",
+    "xterm-addon-webgl": "0.11.1"
+  },
+  "deprecated": false,
+  "description": "The xterm based terminal for Atom",
+  "deserializers": {
+    "TerminalModel": "deserializeTerminalModel"
+  },
+  "devDependencies": {
+    "@types/atom": "1.40.11",
+    "@types/fs-extra": "^9.0.12",
+    "@types/jasmine": "^3.8.1",
+    "@types/node": "^16.3.3",
+    "@types/resize-observer-browser": "^0.1.6",
+    "@types/uuid": "^8.3.1",
+    "@types/which": "^2.0.1",
+    "atom-jasmine3-test-runner": "^5.2.7",
+    "build-commit": "0.1.4",
+    "cross-env": "7.0.3",
+    "eslint-config-atomic": "^1.16.2",
+    "parcel": "2.0.0-nightly.776",
+    "prettier-config-atomic": "^2.0.5",
+    "shx": "0.3.3",
+    "temp": "^0.9.4",
+    "terser-config-atomic": "^0.1.1",
+    "typescript": "^4.3.5"
+  },
+  "engines": {
+    "atom": ">=1.52 <2.0.0",
+    "electron": ">=6.x"
+  },
+  "homepage": "https://github.com/atom-community/terminal#readme",
+  "keywords": [
+    "terminal",
+    "xterm",
+    "term",
+    "console",
+    "shell",
+    "emulator",
+    "pty",
+    "tty",
+    "comspec",
+    "command-line",
+    "bash",
+    "sh",
+    "powershell",
+    "cmd"
+  ],
+  "license": "MIT",
+  "main": "./dist/terminal.js",
+  "name": "atomic-terminal",
+  "prettier": "prettier-config-atomic",
+  "providedServices": {
+    "platformioIDETerminal": {
+      "description": "Run commands and open terminals.",
+      "versions": {
+        "1.1.0": "providePlatformIOIDEService"
+      }
+    },
+    "terminal": {
+      "description": "Change the terminal.",
+      "versions": {
+        "1.0.0": "provideTerminalService"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atom-community/terminal.git"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production parcel build --target main ./src/terminal.ts",
+    "build-commit": "npm run clean && build-commit -o dist",
+    "build.tsc": "tsc -p src/tsconfig.json",
+    "clean": "shx rm -rf dist ./.parcel-cache",
+    "dev": "tsc --watch -p src/tsconfig.json",
+    "format": "prettier --write .",
+    "integration.test": "npm run build && atom --test ./spec/terminal-spec.js",
+    "lint": "eslint . --fix",
+    "prepare": "npm run build",
+    "test": "atom --test spec",
+    "test.format": "prettier . --check",
+    "test.lint": "eslint ."
+  },
+  "targets": {
+    "main": {
+      "context": "electron-renderer",
+      "includeNodeModules": {
+        "atom": false,
+        "electron": false,
+        "node-pty-prebuilt-multiarch": false
+      },
+      "isLibrary": true,
+      "optimize": true
+    }
+  },
+  "title": "Atom Terminal",
+  "version": "1.1.7"
+}

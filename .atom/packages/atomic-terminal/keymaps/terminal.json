@@ -1,0 +1,70 @@
+{
+  ".platform-linux atom-workspace": {
+    "ctrl-`": "atomic-terminal:open",
+    "ctrl-~": "atomic-terminal:open",
+    "ctrl-shift-t": "atomic-terminal:open",
+    "ctrl-alt-shift-t": "atomic-terminal:open",
+    "ctrl-alt-shift-up": "atomic-terminal:open-up",
+    "ctrl-alt-shift-down": "atomic-terminal:open-down",
+    "ctrl-alt-shift-left": "atomic-terminal:open-left",
+    "ctrl-alt-shift-right": "atomic-terminal:open-right",
+    "ctrl-alt-shift-i": "atomic-terminal:open-bottom-dock",
+    "ctrl-alt-shift-u": "atomic-terminal:open-left-dock",
+    "ctrl-alt-shift-o": "atomic-terminal:open-right-dock",
+    "ctrl-alt-shift-f": "atomic-terminal:focus"
+  },
+  ".platform-win32 atom-workspace": {
+    "ctrl-`": "atomic-terminal:open",
+    "ctrl-~": "atomic-terminal:open",
+    "ctrl-shift-t": "atomic-terminal:open",
+    "ctrl-alt-shift-t": "atomic-terminal:open",
+    "ctrl-alt-shift-up": "atomic-terminal:open-up",
+    "ctrl-alt-shift-down": "atomic-terminal:open-down",
+    "ctrl-alt-shift-left": "atomic-terminal:open-left",
+    "ctrl-alt-shift-right": "atomic-terminal:open-right",
+    "ctrl-alt-shift-i": "atomic-terminal:open-bottom-dock",
+    "ctrl-alt-shift-u": "atomic-terminal:open-left-dock",
+    "ctrl-alt-shift-o": "atomic-terminal:open-right-dock",
+    "ctrl-alt-shift-f": "atomic-terminal:focus"
+  },
+  ".platform-darwin atom-workspace": {
+    "cmd-`": "atomic-terminal:open",
+    "cmd-~": "atomic-terminal:open",
+    "cmd-t": "atomic-terminal:open",
+    "cmd-alt-shift-t": "atomic-terminal:open",
+    "cmd-alt-shift-up": "atomic-terminal:open-up",
+    "cmd-alt-shift-down": "atomic-terminal:open-down",
+    "cmd-alt-shift-left": "atomic-terminal:open-left",
+    "cmd-alt-shift-right": "atomic-terminal:open-right",
+    "cmd-alt-shift-i": "atomic-terminal:open-bottom-dock",
+    "cmd-alt-shift-u": "atomic-terminal:open-left-dock",
+    "cmd-alt-shift-o": "atomic-terminal:open-right-dock",
+    "cmd-alt-shift-f": "atomic-terminal:focus"
+  },
+  ".platform-linux atomic-terminal": {
+    "ctrl-insert": "atomic-terminal:copy",
+    "ctrl-shift-c": "atomic-terminal:copy",
+    "shift-insert": "atomic-terminal:paste",
+    "ctrl-shift-v": "atomic-terminal:paste",
+    "ctrl-shift-u": "atomic-terminal:unfocus",
+    "ctrl-l": "atomic-terminal:clear"
+  },
+  ".platform-win32 atomic-terminal": {
+    "ctrl-insert": "atomic-terminal:copy",
+    "ctrl-shift-c": "atomic-terminal:copy",
+    "shift-insert": "atomic-terminal:paste",
+    "ctrl-shift-v": "atomic-terminal:paste",
+    "ctrl-shift-u": "atomic-terminal:unfocus",
+    "ctrl-l": "atomic-terminal:clear"
+  },
+  ".platform-darwin atomic-terminal": {
+    "ctrl-shift-c": "atomic-terminal:copy",
+    "ctrl-insert": "atomic-terminal:copy",
+    "ctrl-shift-v": "atomic-terminal:paste",
+    "shift-insert": "atomic-terminal:paste",
+    "cmd-c": "atomic-terminal:copy",
+    "cmd-v": "atomic-terminal:paste",
+    "ctrl-shift-u": "atomic-terminal:unfocus",
+    "ctrl-l": "atomic-terminal:clear"
+  }
+}

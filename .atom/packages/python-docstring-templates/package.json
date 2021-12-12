@@ -1,0 +1,49 @@
+{
+  "_from": "https://www.atom.io/api/packages/python-docstring-templates/versions/0.2.0/tarball",
+  "_id": "python-docstring-templates@0.2.0",
+  "_inBundle": false,
+  "_integrity": "sha512-+fSQxp8pNyZxFhd1XGajS5aUvkxZ3u6JKCIKU1qCX0HsJX4Ry7Qd2yZM1b2BZOIr9Ds8GffBWv2Plq1nTXUJ9g==",
+  "_location": "/python-docstring-templates",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/python-docstring-templates/versions/0.2.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/python-docstring-templates/versions/0.2.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/python-docstring-templates/versions/0.2.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/python-docstring-templates/versions/0.2.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/python-docstring-templates/versions/0.2.0/tarball",
+  "_shasum": "b297e56dd9c68aadeba1e78be6a1d89c17499cae",
+  "_spec": "https://www.atom.io/api/packages/python-docstring-templates/versions/0.2.0/tarball",
+  "_where": "/tmp/apm-install-dir-202192-96401-zf9im8.11txp",
+  "activationCommands": {
+    "atom-workspace": "python-docstring-templates:insert"
+  },
+  "bugs": {
+    "url": "https://github.com/paxet/python-docstring-templates/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "Insert a basic docstring template for Python functions",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/paxet/python-docstring-templates#readme",
+  "keywords": [
+    "Python",
+    "docstring"
+  ],
+  "license": "MIT",
+  "main": "./lib/python-docstring-templates",
+  "name": "python-docstring-templates",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paxet/python-docstring-templates.git"
+  },
+  "version": "0.2.0"
+}

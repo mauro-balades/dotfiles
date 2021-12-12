@@ -1,0 +1,63 @@
+{
+	"name": "density",
+	"displayName": "Density Language",
+	"description": "Density language support for VS Code",
+	"version": "0.0.3",
+	"publisher": "maurobalades",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"icon": "icon.png",
+	"categories": [
+		"Languages"
+	],
+	"galleryBanner": {
+		"color": "#A5C7DF",
+		"theme": "light"
+	},
+	"bugs": {
+		"url": "https://github.com/density-lang/syntax-vsc/issues"
+	},
+	"homepage": "https://github.com/density-lang/syntax-vsc/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/density-lang/syntax-vsc/"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "density",
+				"aliases": [
+					"Density",
+					"density"
+				],
+				"extensions": [
+					".dst",
+					".dsy",
+					".dty",
+					".density"
+				],
+				"configuration": "./density.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "density",
+				"scopeName": "source.density",
+				"path": "./syntaxes/density.tmLanguage"
+			}
+		],
+		"snippets": [
+			{
+				"language": "density",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "392a9ba9-f10a-45c3-902a-a877f84ddc31",
+		"publisherId": "197f4c06-b7d8-446e-ae9d-e01e3c8f8198",
+		"publisherDisplayName": "Mauro Balades",
+		"installedTimestamp": 1634487137484
+	}
+}

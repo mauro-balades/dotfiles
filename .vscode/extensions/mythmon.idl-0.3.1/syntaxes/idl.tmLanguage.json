@@ -1,0 +1,346 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "IDL",
+  "scopeName": "source.idl",
+  "patterns": [
+    {
+      "include": "#full-language"
+    }
+  ],
+  "repository": {
+    "full-language": {
+      "patterns": [
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#comment"
+        },
+        {
+          "include": "#number"
+        },
+        {
+          "include": "#preprocessor"
+        },
+        {
+          "include": "#raw-block"
+        },
+        {
+          "include": "#const-definition"
+        },
+        {
+          "include": "#property-list"
+        },
+        {
+          "include": "#interface-definition"
+        }
+      ]
+    },
+    "string": {
+      "name": "string.quoted.double.idl",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.idl",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "name": "comment.line",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "number": {
+      "patterns": [
+        {
+          "name": "constant.numeric.decimal",
+          "match": "-?0"
+        },
+        {
+          "name": "constant.numeric.decimal",
+          "match": "-?([1-9]\\d*|[1-9]\\d*\\.\\d*|\\.\\d+)"
+        },
+        {
+          "name": "constant.numeric.hexadecimal",
+          "match": "-?(0x[a-fA-F0-9]+)"
+        },
+        {
+          "name": "constant.numeric.octal",
+          "match": "-?(0\\d+)"
+        }
+      ]
+    },
+    "preprocessor": {
+      "patterns": [
+        {
+          "name": "keyword.control",
+          "match": "#include"
+        }
+      ]
+    },
+    "raw-block": {
+      "patterns": [
+        {
+          "name": "meta.raw-block.cpp",
+          "begin": "%{C\\+\\+",
+          "end": "%}",
+          "contentName": "meta.embedded.cpp",
+          "patterns": [
+            {
+              "include": "source.cpp"
+            }
+          ]
+        },
+        {
+          "name": "meta.raw-block",
+          "begin": "%{",
+          "end": "%}"
+        }
+      ]
+    },
+    "type-name": {
+      "patterns": [
+        {
+          "name": "storage.type",
+          "match": "float|double|w?string|unsigned|short|long|w?char|boolean|octet|ACString"
+        }
+      ]
+    },
+    "const-definition": {
+      "patterns": [
+        {
+          "name": "meta.const-decl",
+          "begin": "(const)",
+          "end": ";",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#type-name"
+            },
+            {
+              "include": "#number"
+            },
+            {
+              "include": "#string"
+            },
+            {
+              "match": "(\\w+)\\s*(=)",
+              "captures": {
+                "1": {
+                  "name": "variable"
+                },
+                "2": {
+                  "name": "keyword.operator"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "attribute-definition": {
+      "patterns": [
+        {
+          "begin": "((readonly)\\s+)?(attribute)",
+          "end": "(\\w+);",
+          "name": "meta.attribute",
+          "beginCaptures": {
+            "2": {
+              "name": "storage.modifier"
+            },
+            "3": {
+              "name": "storage.type"
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "entity.name.variable"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#type-name"
+            }
+          ]
+        }
+      ]
+    },
+    "property-list": {
+      "patterns": [
+        {
+          "name": "meta.property-list",
+          "begin": "(\\[)",
+          "end": "(\\])",
+          "captures": {
+            "1": {
+              "name": "punctuation.section"
+            }
+          },
+          "patterns": [
+            {
+              "match": "(\\w+)(\\([^)]*\\))?",
+              "captures": {
+                "1": {
+                  "name": "entity.name.tag"
+                },
+                "2": {
+                  "patterns": [
+                    {
+                      "name": "string.tag",
+                      "match": "[A-F0-9a-f]{8}-[A-F0-9a-f]{4}-[A-F0-9a-f]{4}-[A-F0-9a-f]{4}-[A-F0-9a-f]{12}"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "method-definition": {
+      "patterns": [
+        {
+          "begin": "(\\w+)\\s+(\\w+)\\s*(\\()",
+          "end": "(\\))(;)",
+          "name": "meta.method",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type"
+            },
+            "2": {
+              "name": "entity.name.function"
+            },
+            "3": {
+              "name": "punctuation.section.parens.begin"
+            }
+          },
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.section.parens.end"
+            },
+            "2": {
+              "name": "punctuation.terminator"
+            }
+          },
+          "patterns": [
+            {
+              "match": "((\\[optional\\])\\s+)?(in|out|inout)\\s+(\\w+)\\s+(\\w+)",
+              "captures": {
+                "2": {
+                  "name": "entity.name.tag"
+                },
+                "3": {
+                  "name": "storage.modifier"
+                },
+                "4": {
+                  "name": "storage.type"
+                },
+                "5": {
+                  "name": "entity.name.variable"
+                }
+              }
+            },
+            {
+              "include": "#property-list"
+            }
+          ]
+        }
+      ]
+    },
+    "interface-definition": {
+      "patterns": [
+        {
+          "begin": "(interface)\\s+(\\w+)(\\s*:\\s*(\\w+))?",
+          "end": "}|;",
+          "name": "meta.interface",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type"
+            },
+            "2": {
+              "name": "entity.name.type"
+            },
+            "4": {
+              "name": "entity.other.inherited-class"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comment"
+            },
+            {
+              "include": "#const-definition"
+            },
+            {
+              "include": "#attribute-definition"
+            },
+            {
+              "include": "#method-definition"
+            },
+            {
+              "include": "#property-list"
+            },
+            {
+              "include": "#raw-block"
+            },
+            {
+              "include": "#cenum-definition"
+            }
+          ]
+        }
+      ]
+    },
+    "cenum-definition": {
+      "patterns": [
+        {
+          "begin": "(cenum)\\s+(\\w+)\\s*:\\s*(\\d+)\\s*({)",
+          "end": "};",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type"
+            },
+            "2": {
+              "name": "entity.name.type"
+            },
+            "3": {
+              "name": "constant.numeric.decimal"
+            }
+          },
+          "patterns": [
+            {
+              "match": "(\\w+)\\s*(=)",
+              "captures": {
+                "1": {
+                  "name": "entity.name.variable"
+                },
+                "2": {
+                  "name": "keyword.operator"
+                }
+              }
+            },
+            {
+              "include": "#comment"
+            },
+            {
+              "include": "#number"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

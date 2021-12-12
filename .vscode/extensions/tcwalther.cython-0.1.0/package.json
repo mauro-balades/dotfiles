@@ -1,0 +1,43 @@
+{
+	"name": "cython",
+	"displayName": "Cython",
+	"description": "Cython syntax highlighting - based on Peter Varo's textmate theme",
+	"version": "0.1.0",
+	"publisher": "tcwalther",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "cython",
+				"aliases": [
+					"Cython",
+					"cython"
+				],
+				"extensions": [
+					".pyx",
+					".pxi",
+					".pxd"
+				],
+				"configuration": "./cython.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "cython",
+				"scopeName": "source.cython",
+				"path": "./syntaxes/cython.tmLanguage"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "2145d811-2c3c-4b14-bd14-e32ff10bfa58",
+		"publisherId": "0a43731d-d0f8-4904-968d-53ffb4e97e10",
+		"publisherDisplayName": "Thomas Walther",
+		"installedTimestamp": 1634624968911
+	}
+}

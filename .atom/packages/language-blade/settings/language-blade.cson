@@ -1,0 +1,111 @@
+'.text.html.php.blade':
+  'editor':
+    'increaseIndentPattern': '''(?x)
+      # From language-html
+      <(?!\\?|(?:area|base|br|col|frame|hr|html|img|input|link|meta|param)\\b|[^>]*/>)
+      ([-_\\.A-Za-z0-9]+)(?=\\s|>)\\b[^>]*>(?!.*</\\1>)
+      |<!--(?!.*-->)
+      |<\\?php.+?\\b(if|else(?:if)?|for(?:each)?|while)\\b.*:(?!.*end\\2)
+      |\\{[^}"\']*$
+      # Blade specific
+      |(?<![A-Za-z0-9_@])
+       @
+       (?:
+        (?i)auth
+       |(?i)can
+       |(?i)canany
+       |(?i)cannot
+       |(?i)component
+       |(?i)componentfirst
+       |(?i)else
+       |(?i)elsecan
+       |(?i)elsecanany
+       |(?i)elsecannot
+       |(?i)elseif
+       |(?i)empty
+       |(?i)error
+       |(?i)for
+       |(?i)foreach
+       |(?i)forelse
+       |(?i)guest
+       |(?i)hasSection
+       |(?i)if
+       |(?i)isset
+       |(?i)slot
+       |(?i)switch
+       |(?i)unless
+       |verbatim
+       |(?i)while
+       )
+       \\b
+      |(?<![A-Za-z0-9_@])
+       @(?i:(php|lang))\\b
+       (?! # Not followed by
+        [\\t ]*\\( # Single line expression
+       |.*(?<![A-Za-z0-9_@])@(?i:end\\3)\\b # @end-directive of the same name on same line
+       )
+      |(?<![A-Za-z0-9_@])
+       @(?i:section|prepend|push)\\b
+       (?! # Not followed by
+        [\\t ]*\\([ ]*(?:"[^"]*"|'[^']*')[ ]*, # Comma after string argument
+       )
+    '''
+    'decreaseIndentPattern': '''(?x)
+      # From language-html
+      ^\\s*
+      (</(?!html)
+        [-_\\.A-Za-z0-9]+\\b[^>]*>
+        |-->
+        |<\\?(php)?\\s+(else(if)?|end(if|for(each)?|while))
+        |\\}
+        # Blade specific
+        |(?<![A-Za-z0-9_@])
+         @
+         (
+          (?i)append
+         |(?i)else
+         |(?i)elsecan
+         |(?i)elsecanany
+         |(?i)elsecannot
+         |(?i)elseif
+         |(?i)empty
+         |(?i)endauth
+         |(?i)endcan
+         |(?i)endcanany
+         |(?i)endcannot
+         |(?i)endcomponent
+         |(?i)endcomponentfirst
+         |(?i)endempty
+         |(?i)enderror
+         |(?i)endfor
+         |(?i)endforeach
+         |(?i)endforelse
+         |(?i)endguest
+         |(?i)endif
+         |(?i)endisset
+         |(?i)endlang
+         |(?i)endphp
+         |(?i)endprepend
+         |(?i)endpush
+         |(?i)endsection
+         |(?i)endslot
+         |(?i)endswitch
+         |(?i)endunless
+         |endverbatim
+         |(?i)endwhile
+         |(?i)overwrite
+         |(?i)show
+         |(?i)stop
+         )
+         \\b
+      )
+    '''
+# Required because of .source.php HACK
+'.support.function.construct.end.blade .source.php':
+  'editor':
+    'decreaseIndentPattern': '''
+      (?x) # From language-php
+      ^(.* \\*\\/)?\\s*
+      # Blade specific
+      (}|!!})
+    '''

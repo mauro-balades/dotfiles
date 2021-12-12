@@ -1,0 +1,60 @@
+{
+	"name": "parrot",
+	"displayName": "Parrot Language",
+	"description": "Parrot language support for VS Code",
+	"version": "0.0.9",
+	"publisher": "maurobalades",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"icon": "icon.png",
+	"categories": [
+		"Languages"
+	],
+	"galleryBanner": {
+		"color": "#0859c9",
+		"theme": "dark"
+	},
+	"bugs": {
+		"url": "https://github.com/parrot-language/syntax-vsc/issues"
+	},
+	"homepage": "https://github.com/parrot-language/syntax-vsc/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/parrot-language/syntax-vsc/"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "parrot",
+				"aliases": [
+					"Parrot",
+					"parrot"
+				],
+				"extensions": [
+					".pr"
+				],
+				"configuration": "./parrot.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "parrot",
+				"scopeName": "source.parrot",
+				"path": "./syntaxes/parrot.tmLanguage"
+			}
+		],
+		"snippets": [
+			{
+				"language": "parrot",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "235b92b2-b4b3-4325-9d25-00f3250aa008",
+		"publisherId": "197f4c06-b7d8-446e-ae9d-e01e3c8f8198",
+		"publisherDisplayName": "Mauro Balades",
+		"installedTimestamp": 1637431046968
+	}
+}

@@ -1,0 +1,170 @@
+{
+	"name": "autodocstring",
+	"displayName": "Python Docstring Generator",
+	"description": "Automatically generates detailed docstrings for python functions",
+	"version": "0.5.4",
+	"publisher": "njpwerner",
+	"license": "SEE LICENSE IN LICENSE",
+	"icon": "images/icon.png",
+	"extensionKind": [
+		"workspace"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/NilsJPWerner/autoDocstring"
+	},
+	"bugs": {
+		"url": "https://github.com/NilsJPWerner/autoDocstring/issues"
+	},
+	"categories": [
+		"Snippets",
+		"Formatters",
+		"Programming Languages"
+	],
+	"keywords": [
+		"python",
+		"docstring",
+		"google",
+		"numpy",
+		"sphinx",
+		"generator",
+		"autodocstring",
+		"docblockr",
+		"pydocstring"
+	],
+	"galleryBanner": {},
+	"engines": {
+		"vscode": "^1.9.0"
+	},
+	"activationEvents": [
+		"onLanguage:python",
+		"onLanguage:starlark"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "autoDocstring.generateDocstring",
+				"title": "Generate Docstring"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "autoDocstring.generateDocstring",
+				"key": "ctrl+shift+2",
+				"mac": "cmd+shift+2",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "resourceLangId == python",
+					"command": "autoDocstring.generateDocstring",
+					"group": "1_modification"
+				}
+			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "Python Docstring Generator configuration",
+			"properties": {
+				"autoDocstring.docstringFormat": {
+					"type": "string",
+					"default": "google",
+					"enum": [
+						"docblockr",
+						"google",
+						"sphinx",
+						"numpy"
+					],
+					"description": "Which docstring format to use."
+				},
+				"autoDocstring.customTemplatePath": {
+					"type": "string",
+					"default": "",
+					"description": "Path to custom docstring template (overrides docstringFormat). Path can be absolute or relative to the project root."
+				},
+				"autoDocstring.generateDocstringOnEnter": {
+					"type": "boolean",
+					"default": true,
+					"description": "Generate docstring on pressing enter after opening a docstring (use quoteStyle)"
+				},
+				"autoDocstring.includeExtendedSummary": {
+					"type": "boolean",
+					"default": false,
+					"description": "Include [extended_summary] tag"
+				},
+				"autoDocstring.includeName": {
+					"type": "boolean",
+					"default": false,
+					"description": "Include function names at the start of docstrings"
+				},
+				"autoDocstring.startOnNewLine": {
+					"type": "boolean",
+					"default": false,
+					"description": "Start docstring on new line"
+				},
+				"autoDocstring.guessTypes": {
+					"type": "boolean",
+					"default": true,
+					"description": "Guess the type of parameters and return values"
+				},
+				"autoDocstring.quoteStyle": {
+					"type": "string",
+					"default": "\"\"\"",
+					"enum": [
+						"\"\"\"",
+						"'''"
+					],
+					"description": "Style of quote used with generate docstring command"
+				},
+				"autoDocstring.logLevel": {
+					"type": "string",
+					"default": "Info",
+					"enum": [
+						"None",
+						"Info",
+						"Debug"
+					],
+					"scope": "window",
+					"description": "Output log information"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"copy_templates": "copyfiles --up 1 \"src/docstring/templates/*.mustache\" out/",
+		"copy_python_test_files": "copyfiles --up 1 \"src/test/integration/python_test_files/*\" out/",
+		"compile": "npm run copy_templates && tsc -p ./",
+		"watch": "npm run copy_templates && tsc -watch -p ./",
+		"preintegration_test": "npm run copy_python_test_files && npm run compile",
+		"unit_test": "mocha -r ts-node/register \"src/test/**/*.spec.ts\"",
+		"integration_test": "node out/test/run_integration_tests.js"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.2.11",
+		"@types/mocha": "^5.2.7",
+		"@types/mustache": "^0.8.32",
+		"@types/node": "^13.13.1",
+		"@types/vscode": "^1.9.0",
+		"chai": "^4.2.0",
+		"copyfiles": "^2.2.0",
+		"mocha": "^6.2.3",
+		"ts-node": "^8.9.0",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+		"@types/stack-trace": "0.0.29",
+		"mustache": "^3.2.1",
+		"stack-trace": "0.0.10"
+	},
+	"__metadata": {
+		"id": "2d6fea35-f68e-461d-9b7b-5cd05be99451",
+		"publisherId": "b32683f0-ccf4-4db1-9dc3-8873e1e045c0",
+		"publisherDisplayName": "Nils Werner",
+		"installedTimestamp": 1635955162376
+	}
+}

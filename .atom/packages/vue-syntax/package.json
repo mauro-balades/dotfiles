@@ -1,0 +1,45 @@
+{
+  "_from": "https://www.atom.io/api/packages/vue-syntax/versions/2.0.0/tarball",
+  "_id": "vue-syntax@2.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-06Sf39LYTV+etw1Pxj/T23XWtgYZNp7ToJqhrYXTgud0lxNBN+VQNzdULIdPEWN/md+FghJWEAN1E8IIeWY1vQ==",
+  "_location": "/vue-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/vue-syntax/versions/2.0.0/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/vue-syntax/versions/2.0.0/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/vue-syntax/versions/2.0.0/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/vue-syntax/versions/2.0.0/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/vue-syntax/versions/2.0.0/tarball",
+  "_shasum": "45a8de6cf2963a6dfaa295ae30c85b914dc2ce38",
+  "_spec": "https://www.atom.io/api/packages/vue-syntax/versions/2.0.0/tarball",
+  "_where": "/tmp/apm-install-dir-2021830-21388-13ocfv3.7pqr",
+  "bugs": {
+    "url": "https://github.com/Joseba84/vue-syntax/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Syntax theme for vue projects",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/Joseba84/vue-syntax#readme",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "license": "MIT",
+  "name": "vue-syntax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joseba84/vue-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "2.0.0"
+}

@@ -1,0 +1,69 @@
+{
+  ".parrot": {
+    "while": {
+      "prefix": "while",
+      "description": "Insert a while loop.",
+      "body": ["while ($1) do", "  $2", " end"]
+    },
+
+    "repeat": {
+      "prefix": "repeat",
+      "description": "Insert a repeat-while loop.",
+      "body": ["repeat do", "  $1", "end while ($2);"]
+    },
+
+    "for": {
+      "prefix": "for",
+      "description": "Insert a for loop.",
+      "body": ["for (var ${1:name} in ${2:list}) do", "  $3", " end"]
+    },
+
+    "if": {
+      "prefix": "if",
+      "description": "Insert an if statement.",
+      "body": ["if ($1) do", "  $2", " end"]
+    },
+
+    "func": {
+      "prefix": "func",
+      "description": "Insert a method definition.",
+      "body": ["func $1() do", "  $2", " end"]
+    },
+
+    "main": {
+      "prefix": "main",
+      "description": "Insert a main method, used as an entry point.",
+      "body": ["func main() do", "  $1", " end"]
+    },
+
+    "init": {
+      "prefix": "init",
+      "description": "Insert an init method.",
+      "body": ["func init() do", "  $1", " end"]
+    },
+
+    "class": {
+      "prefix": "object",
+      "description": "Insert a class definition.",
+      "body": ["object ${1:Name}\n\t", "  $2", " end"]
+    },
+
+    "fiber": {
+      "prefix": "fiber",
+      "description": "Insert a Fiber.create method.",
+      "body": ["Fiber.create($1);"]
+    },
+
+    "print": {
+      "prefix": "print",
+      "description": "Insert a System.print method.",
+      "body": ["System.print($1)"]
+    }
+
+    // "with": {
+		// "prefix": "with",
+		// "description": "Insert a context statement.",
+		// "body": ["with ${1} as ", "$2", " { }"]
+	  // }
+  }
+}

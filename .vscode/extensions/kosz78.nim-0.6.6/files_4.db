@@ -1,0 +1,5 @@
+{"file":"/home/mauro/work/buidl-sys/test/test.nim","timestamp":1628507296461,"_id":"05c4l1cBE3fHzQFC"}
+{"file":"/home/mauro/work/buidl-sys/src/shell.nim","timestamp":1628504590825,"_id":"HIavCykgJE7GAihM"}
+{"file":"/home/mauro/work/buidl-sys/src/main.nim","timestamp":1628507433438,"_id":"PFxZnxM7KEOCftN6"}
+{"$$indexCreated":{"fieldName":"file","unique":false,"sparse":false}}
+{"$$indexCreated":{"fieldName":"timestamp","unique":false,"sparse":false}}

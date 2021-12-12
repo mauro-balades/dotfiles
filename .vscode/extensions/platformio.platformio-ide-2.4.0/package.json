@@ -1,0 +1,669 @@
+{
+	"name": "platformio-ide",
+	"version": "2.4.0",
+	"publisher": "platformio",
+	"engines": {
+		"vscode": "^1.57.0"
+	},
+	"license": "Apache-2.0",
+	"displayName": "PlatformIO IDE",
+	"description": "Professional development environment for Embedded, IoT, Arduino, CMSIS, ESP-IDF, FreeRTOS, libOpenCM3, mbed OS, Pulp OS, SPL, STM32Cube, Zephyr RTOS, ARM, AVR, Espressif (ESP8266/ESP32), FPGA, MCS-51 (8051), MSP430, Nordic (nRF51/nRF52), NXP i.MX RT, PIC32, RISC-V, STMicroelectronics (STM8/STM32), Teensy",
+	"categories": [
+		"Programming Languages",
+		"Debuggers",
+		"Other"
+	],
+	"keywords": [
+		"embedded",
+		"debug",
+		"c",
+		"c++",
+		"microcontroller"
+	],
+	"main": "./dist/extension",
+	"icon": "resources/platformio-logo.png",
+	"homepage": "https://platformio.org",
+	"author": {
+		"name": "PlatformIO.Org"
+	},
+	"bugs": {
+		"url": "https://github.com/platformio/platformio-vscode-ide/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/platformio/platformio-vscode-ide.git"
+	},
+	"activationEvents": [
+		"*"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "platformio-debug.disassembly",
+				"aliases": [
+					"Disassembly"
+				],
+				"extensions": [
+					".dbgasm"
+				]
+			},
+			{
+				"id": "platformio-debug.memoryview",
+				"aliases": [
+					"Memory"
+				],
+				"extensions": [
+					".dbgmem"
+				]
+			},
+			{
+				"id": "platformio-debug.asm",
+				"aliases": [
+					"Assembly",
+					"asm"
+				],
+				"extensions": [
+					".asm",
+					".nasm",
+					".yasm",
+					".inc",
+					".s"
+				],
+				"configuration": "./syntaxes/assembly-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "platformio-debug.disassembly",
+				"scopeName": "source.platformio-debug-disassembly",
+				"path": "./syntaxes/platformio-debug-disassembly.json"
+			},
+			{
+				"language": "platformio-debug.memoryview",
+				"scopeName": "source.platformio-debug-memoryview",
+				"path": "./syntaxes/platformio-debug-memoryview.json"
+			},
+			{
+				"language": "platformio-debug.asm",
+				"scopeName": "source.platformio-debug-asm",
+				"path": "./syntaxes/assembly.tmLanguage"
+			}
+		],
+		"commands": [
+			{
+				"command": "platformio-ide.privateRunTask",
+				"title": "Custom task runner (private)",
+				"category": "PlatformIO",
+				"enablement": "false"
+			},
+			{
+				"command": "platformio-ide.showHome",
+				"title": "Home",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.switchProjectEnv",
+				"title": "Switch Project Environment",
+				"category": "PlatformIO",
+				"icon": "$(root-folder)"
+			},
+			{
+				"command": "platformio-ide.refreshProjectTasks",
+				"title": "Refresh Project Tasks",
+				"category": "PlatformIO",
+				"icon": "$(refresh)"
+			},
+			{
+				"command": "platformio-ide.build",
+				"title": "Build",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.upload",
+				"title": "Upload",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.clean",
+				"title": "Clean",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.test",
+				"title": "Test",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.remoteUpload",
+				"title": "Remote Upload",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.serialMonitor",
+				"title": "Serial Monitor",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.rebuildProjectIndex",
+				"title": "Rebuild IntelliSense Index",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.newTerminal",
+				"title": "New Terminal",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.openPIOCoreCLI",
+				"title": "Open PlatformIO Core CLI",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.startDebugging",
+				"title": "Start Debugging",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.updateGlobalLibs",
+				"title": "Update global libraries",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.updatePlatforms",
+				"title": "Update platforms & packages",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.updateCore",
+				"title": "Update All (platforms, packages, libraries)",
+				"category": "PlatformIO"
+			},
+			{
+				"command": "platformio-ide.upgradeCore",
+				"title": "Upgrade PlatformIO Core to the latest version",
+				"category": "PlatformIO"
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.peripherals.updateNode",
+				"title": "Update Value"
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.peripherals.selectedNode",
+				"title": "Selected"
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.registers.selectedNode",
+				"title": "Selected"
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.peripherals.copyValue",
+				"title": "Copy Value"
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.registers.copyValue",
+				"title": "Copy Value"
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.peripherals.setFormat",
+				"title": "Set Value Format"
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.registers.setFormat",
+				"title": "Set Value Format"
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.examineMemory",
+				"title": " View Memory",
+				"icon": {
+					"light": "resources/icons/add.svg",
+					"dark": "resources/icons/add-inverse.svg"
+				}
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.memory.clearHistory",
+				"title": "Clear Memory View History",
+				"icon": {
+					"light": "resources/icons/closeall.svg",
+					"dark": "resources/icons/closeall-inverse.svg"
+				}
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.memory.deleteHistoryItem",
+				"title": "Delete"
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.viewDisassembly",
+				"title": "View Disassembly (Function)"
+			},
+			{
+				"category": "PlatformIO Debug",
+				"command": "platformio-debug.setForceDisassembly",
+				"title": "Set Force Disassembly"
+			}
+		],
+		"breakpoints": [
+			{
+				"language": "c"
+			},
+			{
+				"language": "cpp"
+			},
+			{
+				"language": "platformio-debug.asm"
+			},
+			{
+				"language": "platformio-debug.disassembly"
+			}
+		],
+		"debuggers": [
+			{
+				"configurationAttributes": {
+					"launch": {
+						"properties": {
+							"executable": {
+								"description": "Path of firmware or program",
+								"type": "string"
+							},
+							"toolchainBinDir": {
+								"description": "Path of toolchain binary directory",
+								"type": "string"
+							},
+							"projectEnvName": {
+								"description": "Working project environment",
+								"type": "string"
+							},
+							"svdPath": {
+								"default": null,
+								"description": "Path to an SVD file describing the peripherals of the microcontroller",
+								"type": [
+									"string",
+									"null"
+								]
+							},
+							"loadMode": {
+								"description": "Control when PlatformIO should load debugging firmware to the end target (see docs for `debug_load_mode` option)",
+								"default": null,
+								"type": [
+									"string",
+									"null"
+								],
+								"enum": [
+									"always",
+									"modified",
+									"manual"
+								]
+							},
+							"showDevDebugOutput": {
+								"default": false,
+								"description": "Prints all GDB responses to the console",
+								"type": "boolean"
+							}
+						},
+						"required": [
+							"executable",
+							"toolchainBinDir"
+						]
+					}
+				},
+				"initialConfigurations": [
+					{
+						"name": "PlatformIO Debugger",
+						"request": "launch",
+						"type": "platformio-debug",
+						"toolchainBinDir": "/usr/local/bin"
+					}
+				],
+				"configurationSnippets": [
+					{
+						"body": {
+							"name": "${6:PlatformIO Debugger}",
+							"request": "launch",
+							"type": "platformio-debug",
+							"executable": ".pio/build/myenv/firmware.elf",
+							"toolchainBinDir": "/usr/local/bin"
+						},
+						"description": "PlatformIO Debugger",
+						"label": "PlatformIO Debugger"
+					}
+				],
+				"label": "PlatformIO Debugger",
+				"program": "./node_modules/platformio-vscode-debug/dist/adapter.js",
+				"runtime": "node",
+				"type": "platformio-debug"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "platformio-debug.examineMemory",
+					"when": "debugType == platformio-debug"
+				},
+				{
+					"command": "platformio-debug.memory.clearHistory",
+					"when": "debugType == platformio-debug"
+				},
+				{
+					"command": "platformio-debug.viewDisassembly",
+					"when": "debugType == platformio-debug"
+				},
+				{
+					"command": "platformio-debug.setForceDisassembly",
+					"when": "debugType == platformio-debug"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "platformio-debug.peripherals.updateNode",
+					"when": "view == platformio-debug.peripherals && viewItem == field"
+				},
+				{
+					"command": "platformio-debug.peripherals.updateNode",
+					"when": "view == platformio-debug.peripherals && viewItem == registerRW"
+				},
+				{
+					"command": "platformio-debug.peripherals.updateNode",
+					"when": "view == platformio-debug.peripherals && viewItem == registerWO"
+				},
+				{
+					"command": "platformio-debug.peripherals.copyValue",
+					"when": "view == platformio-debug.peripherals && viewItem == field"
+				},
+				{
+					"command": "platformio-debug.peripherals.copyValue",
+					"when": "view == platformio-debug.peripherals && viewItem == registerRW"
+				},
+				{
+					"command": "platformio-debug.peripherals.copyValue",
+					"when": "view == platformio-debug.peripherals && viewItem == registerRO"
+				},
+				{
+					"command": "platformio-debug.registers.copyValue",
+					"when": "view == platformio-debug.registers && viewItem == register"
+				},
+				{
+					"command": "platformio-debug.registers.copyValue",
+					"when": "view == platformio-debug.registers && viewItem == field"
+				},
+				{
+					"command": "platformio-debug.peripherals.setFormat",
+					"when": "view == platformio-debug.peripherals"
+				},
+				{
+					"command": "platformio-debug.registers.setFormat",
+					"when": "view == platformio-debug.registers"
+				},
+				{
+					"command": "platformio-debug.memory.deleteHistoryItem",
+					"when": "view == platformio-debug.memory",
+					"group": "inline"
+				}
+			],
+			"view/title": [
+				{
+					"command": "platformio-ide.switchProjectEnv",
+					"when": "pioCoreReady && pioMultiEnvProject && view == platformio-ide.projectTasks",
+					"group": "navigation"
+				},
+				{
+					"command": "platformio-ide.refreshProjectTasks",
+					"when": "pioCoreReady && view == platformio-ide.projectTasks",
+					"group": "navigation"
+				},
+				{
+					"command": "platformio-debug.examineMemory",
+					"when": "debugType == platformio-debug && view == platformio-debug.memory",
+					"group": "navigation"
+				},
+				{
+					"command": "platformio-debug.memory.clearHistory",
+					"when": "debugType == platformio-debug && view == platformio-debug.memory",
+					"group": "navigation"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "platformio",
+					"title": "PlatformIO",
+					"icon": "resources/platformio-activity-icon.svg",
+					"when": "pioCoreReady"
+				}
+			]
+		},
+		"views": {
+			"platformio": [
+				{
+					"id": "platformio-ide.projectTasks",
+					"name": "Project Tasks",
+					"when": "pioProjectReady"
+				},
+				{
+					"id": "platformio-activitybar.quickAccess",
+					"name": "Quick Access",
+					"when": "pioCoreReady"
+				}
+			],
+			"debug": [
+				{
+					"id": "platformio-debug.peripherals",
+					"name": "Peripherals"
+				},
+				{
+					"id": "platformio-debug.registers",
+					"name": "Registers"
+				},
+				{
+					"id": "platformio-debug.memory",
+					"name": "Memory"
+				},
+				{
+					"id": "platformio-debug.disassembly",
+					"name": "Disassembly"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "platformio-ide.build",
+				"key": "ctrl+alt+b"
+			},
+			{
+				"command": "platformio-ide.upload",
+				"key": "ctrl+alt+u"
+			},
+			{
+				"command": "platformio-ide.serialMonitor",
+				"key": "ctrl+alt+s"
+			},
+			{
+				"command": "workbench.action.tasks.runTask",
+				"key": "ctrl+alt+t"
+			}
+		],
+		"taskDefinitions": [
+			{
+				"type": "PlatformIO",
+				"required": [
+					"task"
+				],
+				"properties": {
+					"task": {
+						"type": "string",
+						"description": "PlatformIO Task ID"
+					}
+				}
+			}
+		],
+		"problemMatchers": [
+			{
+				"name": "platformio",
+				"owner": "cpp",
+				"fileLocation": [
+					"relative",
+					"${workspaceFolder}"
+				],
+				"pattern": {
+					"regexp": "^([^:\\n]+):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "PlatformIO IDE configuration",
+			"properties": {
+				"platformio-ide.activateOnlyOnPlatformIOProject": {
+					"type": "boolean",
+					"default": false,
+					"description": "Activate the PlatformIO extension only when a PlatformIO-based project (with `platformio.ini`) is opened in the workspace"
+				},
+				"platformio-ide.activateProjectOnTextEditorChange": {
+					"type": "boolean",
+					"default": false,
+					"description": "Automatically activate project depending on an active opened text editor"
+				},
+				"platformio-ide.autoOpenPlatformIOIniFile": {
+					"type": "boolean",
+					"default": true,
+					"description": "Automatically open the `platformio.ini` file from a project when no other editors are opened"
+				},
+				"platformio-ide.autoCloseSerialMonitor": {
+					"type": "boolean",
+					"default": true,
+					"description": "Automatically close Serial Port Monitor before uploading/testing"
+				},
+				"platformio-ide.autoRebuildAutocompleteIndex": {
+					"type": "boolean",
+					"default": true,
+					"description": "Automatically rebuild the project IntelliSense index when platformio.ini is changed or when new libraries are installed."
+				},
+				"platformio-ide.buildTask": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "The build task (label) used for the `Build` button in the bottom toolbar and for key bindings. The default is `PlatformIO: Build`."
+				},
+				"platformio-ide.autoPreloadEnvTasks": {
+					"type": "boolean",
+					"default": false,
+					"description": "Automatically preload ALL project environment tasks"
+				},
+				"platformio-ide.customPATH": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Custom PATH for the `platformio` command, if you prefer to use a custom version of PlatformIO Core. Fill in the result of the system terminal command `echo $PATH` (Unix) / `echo %PATH%` (Windows)."
+				},
+				"platformio-ide.disableToolbar": {
+					"type": "boolean",
+					"default": false,
+					"description": "Disable the PlatformIO toolbar"
+				},
+				"platformio-ide.forceUploadAndMonitor": {
+					"type": "boolean",
+					"default": false,
+					"description": "Force the `platformio-ide.upload` command to use the 'Upload and Monitor' task"
+				},
+				"platformio-ide.reopenSerialMonitorDelay": {
+					"type": "integer",
+					"default": 0,
+					"minimum": 0,
+					"description": "Time in milliseconds after which the Serial Port Monitor is reopened"
+				},
+				"platformio-ide.useBuiltinPython": {
+					"type": "boolean",
+					"default": true,
+					"description": "Use a portable Python 3 Interpreter if available"
+				},
+				"platformio-ide.useBuiltinPIOCore": {
+					"type": "boolean",
+					"default": true,
+					"description": "Use a built-in PlatformIO Core"
+				},
+				"platformio-ide.useDevelopmentPIOCore": {
+					"type": "boolean",
+					"default": false,
+					"description": "Use a development version of PlatformIO Core"
+				},
+				"platformio-ide.disablePIOHomeStartup": {
+					"type": "boolean",
+					"default": false,
+					"description": "Disable showing PIO Home at startup"
+				},
+				"platformio-ide.pioHomeServerHttpHost": {
+					"type": "string",
+					"default": "127.0.0.1",
+					"description": "PIO Home server HTTP host (default is 127.0.0.1, but in case of dockerized environments 0.0.0.0)"
+				},
+				"platformio-ide.pioHomeServerHttpPort": {
+					"type": "integer",
+					"description": "PIO Home server HTTP port (the default value 0 automatically assigns a free port in the range [8010..8100])"
+				},
+				"platformio-ide.customPyPiIndexUrl": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Custom base URL of the Python Package Index (default `https://pypi.org/simple`)"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"build": "webpack --mode production",
+		"lint": "eslint .eslintrc.js src",
+		"format": "prettier --single-quote --print-width 88 --write \"src/**/*.js\"",
+		"vscode:package": "webpack --mode production && vsce package"
+	},
+	"dependencies": {
+		"fs-plus": "~3.1.1",
+		"platformio-node-helpers": "~9.4.0",
+		"platformio-vscode-debug": "~1.4.0"
+	},
+	"devDependencies": {
+		"@babel/core": "~7.16.0",
+		"@babel/eslint-parser": "~7.16.0",
+		"@babel/plugin-proposal-class-properties": "~7.16.0",
+		"@babel/preset-env": "~7.16.0",
+		"@types/node": "~12",
+		"@types/vscode": "~1.57.0",
+		"babel-loader": "~8.2.3",
+		"eslint": "~8.1.0",
+		"eslint-import-resolver-webpack": "~0.13.2",
+		"eslint-plugin-import": "~2.25.2",
+		"prettier": "~2.4.1",
+		"vsce": "~2.2.0",
+		"webpack": "~5.61.0",
+		"webpack-cli": "~4.9.1"
+	},
+	"extensionDependencies": [
+		"ms-vscode.cpptools"
+	],
+	"__metadata": {
+		"id": "6cf182b2-70cf-433e-97f2-45f414c9ad89",
+		"publisherId": "18aa96e4-5b0a-4294-8fc8-8fdf1bd458c9",
+		"publisherDisplayName": "PlatformIO",
+		"installedTimestamp": 1636111095642
+	}
+}

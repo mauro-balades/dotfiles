@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Insert Python docstring",
+        "command": "python-docstring-templates:insert"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "python-docstring-templates",
+          "submenu": [
+            {
+              "label": "Insert",
+              "command": "python-docstring-templates:insert"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+	"name": "idl",
+	"displayName": "idl",
+	"description": "Syntax highlighting for IDL and variants (XPIDL, etc.)",
+	"version": "0.3.1",
+	"publisher": "mythmon",
+	"repository": "https://github.com/mythmon/vscode-idl",
+	"engines": {
+		"vscode": "^1.29.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "idl",
+				"aliases": [
+					"IDL",
+					"idl"
+				],
+				"extensions": [
+					"idl"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "idl",
+				"scopeName": "source.idl",
+				"path": "./syntaxes/idl.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.embedded.cpp": "cpp"
+				}
+			}
+		]
+	},
+	"__metadata": {
+		"id": "15c48976-8b9d-45ee-846f-87ec1bfc3c6f",
+		"publisherId": "57c71c19-04f9-42c2-8643-a604322821d7",
+		"publisherDisplayName": "mythmon",
+		"installedTimestamp": 1628680329320
+	}
+}

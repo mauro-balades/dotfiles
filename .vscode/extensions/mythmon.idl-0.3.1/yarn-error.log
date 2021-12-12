@@ -1,0 +1,63 @@
+Arguments: 
+  /home/mythmon/.nodenv/versions/10.11.0/bin/node /usr/share/yarn/bin/yarn.js publish
+
+PATH: 
+  /home/mythmon/.nodenv/versions/10.11.0/bin:/home/mythmon/.nodenv/libexec:/home/mythmon/.nodenv/plugins/node-build/bin:/home/mythmon/.pyenv/shims:/home/mythmon/.pyenv/bin:/home/mythmon/.nodenv/shims:/home/mythmon/.nodenv/bin/:/home/mythmon/.local/bin:/home/mythmon/.cargo/bin/:/usr/local/bin/:/home/mythmon/.cabal/bin:/home/mythmon/.yarn/bin/:/home/mythmon/go/bin:/home/mythmon/.pyenv/shims:/home/mythmon/.pyenv/bin:/home/mythmon/.nodenv/shims:/home/mythmon/.local/opt/google-cloud-sdk/bin:/home/mythmon/.pyenv/shims:/home/mythmon/.pyenv/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  10.11.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/usr/share/yarn/lib/cli.js:125278:13)
+      at Interface.emit (events.js:182:13)
+      at Interface._ttyWrite (readline.js:783:16)
+      at ReadStream.onkeypress (readline.js:168:10)
+      at ReadStream.emit (events.js:182:13)
+      at emitKeys (internal/readline.js:424:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1022:36)
+      at ReadStream.emit (events.js:182:13)
+      at addChunk (_stream_readable.js:283:12)
+
+npm manifest: 
+  {
+      "name": "idl",
+      "displayName": "idl",
+      "description": "Syntax highlighting for IDL and variants (XPIDL, etc.)",
+      "version": "0.0.1",
+      "engines": {
+          "vscode": "^1.30.0"
+      },
+      "categories": [
+          "Programming Languages"
+      ],
+      "contributes": {
+          "languages": [{
+              "id": "idl",
+              "aliases": ["IDL", "idl"],
+              "extensions": ["idl"],
+              "configuration": "./language-configuration.json"
+          }],
+          "grammars": [{
+              "language": "idl",
+              "scopeName": "source.idl",
+              "path": "./syntaxes/idl.tmLanguage.json",
+              "embeddedLanguages": {
+                  "meta.embedded.cpp": "cpp"
+              }
+          }]
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

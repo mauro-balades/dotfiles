@@ -1,0 +1,79 @@
+{
+	"name": "theme-it-icons",
+	"displayName": "theme-it icons for vsc",
+	"description": "Theme-it icons creates some beautifull icons for your visual studio code editor",
+	"categories": [
+		"Themes"
+	],
+	"license": "CC BY-NC-ND 4.0",
+	"version": "1.0.0",
+	"publisher": "themeit",
+	"repository": "https://github.com/theme-it/icons-vsc",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"icon": "icon.png",
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"iconThemes": [
+			{
+				"id": "icons-vsc",
+				"label": "Theme-it Icon Theme (Visual Studio Code) - Black & White",
+				"path": "./icons/icon-theme.json"
+			},
+			{
+				"id": "icons-vsc-light",
+				"label": "Theme-it Icon Theme (Visual Studio Code) - Colors",
+				"path": "./icons/icon-theme-light.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "theme-it-icons-vsc.hidesExplorerArrows",
+				"title": "Theme-it Lights Icons: Toggle Folder Arrows"
+			}
+		],
+		"configuration": {
+			"title": "%displayName%",
+			"properties": {
+				"theme-it-icons-vsc.hidesExplorerArrows": {
+					"type": "boolean",
+					"default": false,
+					"description": "%configuration.hidesExplorerArrows%",
+					"scope": "window"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run build",
+		"prebuild": "npm run lint && npm run clean",
+		"build": "npm run compile",
+		"compile": "tsc -p ./",
+		"clean": "rimraf ./out",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"lint": "tslint -c tslint.json ./src/**/*.ts"
+	},
+	"devDependencies": {
+		"@types/node": "^10.7.1",
+		"rimraf": "^2.6.2",
+		"ts-node": "^7.0.1",
+		"tslint": "^5.11.0",
+		"typescript": "^3.0.1",
+		"vscode": "^1.1.21"
+	},
+	"dependencies": {
+		"bluebird": "^3.5.1",
+		"lodash.merge": "^4.6.2",
+		"semver": "^5.5.1"
+	},
+	"__metadata": {
+		"id": "6b8c2fbc-ae13-4406-a83b-b27d7a60d7fd",
+		"publisherId": "64cdaf81-8725-4020-a4b7-eb244aa20908",
+		"publisherDisplayName": "theme it",
+		"installedTimestamp": 1633367468225
+	}
+}

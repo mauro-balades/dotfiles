@@ -1,0 +1,56 @@
+{
+  "_from": "https://www.atom.io/api/packages/city-lights-icons/versions/1.1.1/tarball",
+  "_id": "city-lights-icons@1.1.1",
+  "_inBundle": false,
+  "_integrity": "sha512-xaD1tYcusEbPspLfYZmd+WuiKPS0vcFDCj/QYl/F3PtARtCe82YmYWwpiYjoS9NGqP3325IBC27f7web/WI/cA==",
+  "_location": "/city-lights-icons",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/city-lights-icons/versions/1.1.1/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/city-lights-icons/versions/1.1.1/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/city-lights-icons/versions/1.1.1/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/city-lights-icons/versions/1.1.1/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/city-lights-icons/versions/1.1.1/tarball",
+  "_shasum": "9e5b907b8d0bd81b61c211656e7e45c4c5a98f6e",
+  "_spec": "https://www.atom.io/api/packages/city-lights-icons/versions/1.1.1/tarball",
+  "_where": "/tmp/apm-install-dir-2021828-13306-1xtn66.51l71",
+  "author": {
+    "name": "Noud Adrichem"
+  },
+  "bugs": {
+    "url": "https://github.com/Yummygum/city-lights-icons-atom/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "The City Lights Icon Package contains over 60 file type icons designed and optimized for use in your Atom sidebar.",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/Yummygum/city-lights-icons-atom#readme",
+  "keywords": [
+    "icons",
+    "file-icons",
+    "file-tree",
+    "file tree",
+    "tree view",
+    "tree-view",
+    "city-lights-ui",
+    "city-lights-syntax",
+    "city-lights-icons",
+    "fileicons",
+    "file icons"
+  ],
+  "license": "CC-BY-NC-ND",
+  "name": "city-lights-icons",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yummygum/city-lights-icons-atom.git"
+  },
+  "version": "1.1.1"
+}

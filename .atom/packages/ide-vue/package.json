@@ -1,0 +1,106 @@
+{
+  "_from": "https://www.atom.io/api/packages/ide-vue/versions/0.1.9/tarball",
+  "_id": "ide-vue@0.1.9",
+  "_inBundle": false,
+  "_integrity": "sha512-FpR0LapL9pyFoETN81S0I7LxKz3cSch3f5g6RgCMLELseALys6fBObyJLiePJFSlCWgsP1x+/fMUFTXZ/t3/oA==",
+  "_location": "/ide-vue",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://www.atom.io/api/packages/ide-vue/versions/0.1.9/tarball",
+    "rawSpec": "https://www.atom.io/api/packages/ide-vue/versions/0.1.9/tarball",
+    "saveSpec": "https://www.atom.io/api/packages/ide-vue/versions/0.1.9/tarball",
+    "fetchSpec": "https://www.atom.io/api/packages/ide-vue/versions/0.1.9/tarball"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://www.atom.io/api/packages/ide-vue/versions/0.1.9/tarball",
+  "_shasum": "f58f663c6b646f1ca54bdd28428985085c403c4b",
+  "_spec": "https://www.atom.io/api/packages/ide-vue/versions/0.1.9/tarball",
+  "_where": "/tmp/apm-install-dir-2021830-21097-7y1s72.bg74x",
+  "author": {
+    "name": "Ryan Watts",
+    "email": "ryandwatts@gmail.com",
+    "url": "https://github.com/rwatts3"
+  },
+  "bugs": {
+    "url": "https://github.com/rwatts3/atom-ide-vue/issues"
+  },
+  "bundleDependencies": false,
+  "configSchema": {
+    "additionalGrammars": {
+      "type": "array",
+      "title": "Register Additional Grammars",
+      "default": [],
+      "description": "Register additional grammars"
+    }
+  },
+  "consumedServices": {
+    "linter-indie": {
+      "versions": {
+        "2.0.0": "consumeLinterV2"
+      }
+    },
+    "datatip": {
+      "versions": {
+        "0.1.0": "consumeDatatip"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-languageclient": "^0.9.5",
+    "vue-language-server": "^0.0.31"
+  },
+  "deprecated": false,
+  "description": "Vue language support for Atom-IDE.",
+  "devDependencies": {
+    "@types/atom": "1.27.0",
+    "@types/node": "^10.3.0"
+  },
+  "engines": {
+    "atom": ">=1.19.0"
+  },
+  "enhancedScopes": [
+    "text.html.vue"
+  ],
+  "homepage": "https://github.com/rwatts3/atom-ide-vue#readme",
+  "keywords": [
+    "atom-ide",
+    "vue",
+    "lsp",
+    "language-client"
+  ],
+  "license": "MIT",
+  "main": "./src/main",
+  "name": "ide-vue",
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provideAutocomplete"
+      }
+    },
+    "definitions": {
+      "versions": {
+        "0.1.0": "provideDefinitions"
+      }
+    },
+    "find-references": {
+      "versions": {
+        "0.1.0": "provideFindReferences"
+      }
+    },
+    "outline-view": {
+      "versions": {
+        "0.1.0": "provideOutlines"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rwatts3/atom-ide-vue.git"
+  },
+  "scripts": {},
+  "version": "0.1.9"
+}
