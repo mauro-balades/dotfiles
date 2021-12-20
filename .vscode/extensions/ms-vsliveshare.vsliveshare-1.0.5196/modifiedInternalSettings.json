@@ -1,8 +1,0 @@
-{
-	"whatsNewUri": "",
-	"isInternal": false,
-	"canCollectPII": false,
-	"nativeAuthFlow": true,
-	"authenticationProvider": "GitHub",
-	"anonymousAuthReloadFlag": null
-}

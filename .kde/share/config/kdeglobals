@@ -134,15 +134,15 @@ ForegroundVisited=120,120,120
 ColorScheme=GloriousDark
 Name[es_ES]=Brisa oscuro
 Name=GloriousDark
-font=Roboto,10,-1,5,50,0,0,0,0,0
-menuFont=Roboto,10,-1,5,50,0,0,0,0,0
+font=Inter,10,-1,5,50,0,0,0,0,0
+menuFont=Inter,10,-1,5,50,0,0,0,0,0
 shadeSortColumn=true
-smallestReadableFont=Roboto,8,-1,5,50,0,0,0,0,0
-toolBarFont=Roboto,10,-1,5,50,0,0,0,0,0
+smallestReadableFont=Inter,8,-1,5,50,0,0,0,0,0
+toolBarFont=Inter,10,-1,5,50,0,0,0,0,0
 widgetStyle=Lightly
 
 [Icons]
-Theme=Tela-circle-dark
+Theme=Reversal-blue-dark
 
 [KDE]
 ShowIconsInMenuItems=true

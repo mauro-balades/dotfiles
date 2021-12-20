@@ -1,0 +1,53 @@
+{
+	"name": "comet",
+	"displayName": "Comet Language",
+	"description": "Comet language support for VS Code",
+	"version": "0.0.1",
+	"publisher": "maurobalades",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"icon": "icon.png",
+	"categories": [
+		"Languages"
+	],
+	"bugs": {
+		"url": "https://github.com/comet-language/syntax-vsc/issues"
+	},
+	"homepage": "https://github.com/comet-language/syntax-vsc/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/comet-language/syntax-vsc/"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "comet",
+				"aliases": [
+					"Comet",
+					"comet"
+				],
+				"extensions": [
+					".cm"
+				],
+				"configuration": "./comet.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "comet",
+				"scopeName": "source.comet",
+				"path": "./syntaxes/comet.tmLanguage"
+			}
+		],
+		"snippets": [
+			{
+				"language": "comet",
+				"path": "./snippets/snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"installedTimestamp": 1639586441949
+	}
+}
